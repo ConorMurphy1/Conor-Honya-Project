@@ -110,7 +110,7 @@ License: You must have a valid license purchased only from themeforest to legall
         <div class="hk-settings-panel">
             <div class="nicescroll-bar position-relative">
                 <div class="settings-panel-wrap">
-                    <form action="">
+                    <form action="{{route('search')}}" method="GET">
                         <h6 class="mb-5">Search</h6>
                         <p class="font-14">Name</p>
                         <div class="button-list hk-nav-select mb-10">
@@ -129,7 +129,7 @@ License: You must have a valid license purchased only from themeforest to legall
                         <hr>
                         <p class="font-14">Year</p>
                         <div class="button-list hk-nav-select mb-10">
-                            <select name="category_id" class="form-control">
+                            <select name="year" class="form-control">
                                 <option value="">Choose..</option>
                                 @foreach ($books as $book)
                                     <option value="{{$book->year}}">{{$book->year}}</option>
@@ -139,7 +139,7 @@ License: You must have a valid license purchased only from themeforest to legall
                         <hr>
                         <p class="font-14">Author</p>
                         <div class="button-list hk-nav-select mb-10">
-                            <select name="category_id" class="form-control">
+                            <select name="author_id" class="form-control">
                                 <option value="">Choose..</option>
                                 @foreach ($authors as $author)
                                     <option value="{{$author->id}}">{{$author->name}}</option>
@@ -147,7 +147,7 @@ License: You must have a valid license purchased only from themeforest to legall
                             </select>
                         </div>
                         <hr>
-                        <button type="submit" id="reset_settings" class="btn btn-success btn-block btn-reset mt-30">Search</button>
+                        <button type="submit" class="btn btn-success btn-block btn-reset mt-30">Search</button>
                     </form>
                 </div>
             </div>

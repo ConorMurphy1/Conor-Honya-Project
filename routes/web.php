@@ -59,3 +59,4 @@ Route::resource('customers', CustomerController::class);
 Route::resource('books', BookController::class);
 Route::get('roles', [RoleController::class, 'index'])->name('roles.index');
 Route::get('/', [DashboardController::class, 'home'])->name('home');
+Route::get('search/books', [DashboardController::class, 'search'])->name('search');
