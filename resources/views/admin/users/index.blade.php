@@ -5,7 +5,7 @@
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-light bg-transparent">
         <li class="breadcrumb-item"><a href="#">Books</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Customer/li>
+        <li class="breadcrumb-item active" aria-current="page">User</li>
     </ol>
 </nav>
 <!-- /Breadcrumb -->
@@ -13,7 +13,7 @@
 
     <!-- Title -->
     <div class="hk-pg-header">
-        <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Customer</h4>
+        <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Users</h4>
     </div>
     <!-- /Title -->
 
@@ -34,24 +34,26 @@
                                         <th>Email</th>
                                         <th>Password</th>
                                         <th>Address</th>
+                                        <th>Role</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($customers as $customer)
+                                    @foreach ($users as $user)
                                         <tr class="bg-green">
-                                            <td>{{$customer->id}}</td>
-                                            <td>{{$customer->name}}</td>
-                                            <td><img src="{{asset('storage/customer_images/'.$customer->image)}}" style="width: 25%;"></td>
-                                            <td>{{$customer->phone_no}}</td>
-                                            <td>{{$customer->email}}</td>
-                                            <td>{{$customer->password}}</td>
-                                            <td>{{$customer->address}}</td>
+                                            <td>{{$user->id}}</td>
+                                            <td>{{$user->name}}</td>
+                                            <td><img src="{{asset('storage/user_images/'.$user->image)}}" style="width: 25%;"></td>
+                                            <td>{{$user->phone}}</td>
+                                            <td>{{$user->email}}</td>
+                                            <td>{{$user->password}}</td>
+                                            <td>{{$user->address}}</td>
+                                            <td>{{$user->role->name}}</td>
                                             <td>
-                                                <form action="{{ url('customers/' . $customer->id) }}" method="post">
+                                                <form action="{{ url('users/' . $user->id) }}" method="post">
                                                 @csrf @method('delete')
-                                                <a href="{{ url('customers/'.$customer->id.'/edit') }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit text-dark"></i></a>
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash-o text-dark"></i></button>
+                                                    <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit text-dark"></i></a>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash-o text-dark"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

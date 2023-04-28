@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="table-wrap">
-                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-blue">
+                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-green">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -50,7 +50,7 @@
                                         $bookcat = App\Models\BookCategory::where('book_id', $book->id)->get();
                                         // add the price of the current product to the total
                                     @endphp
-                                        <tr class="bg-blue">
+                                        <tr class="bg-green">
                                             <td class="bg-blue">{{$book->id}}</td>
                                             <td>{{$book->name}}</td>
                                             <td>

@@ -47,7 +47,6 @@ class ContactUsController extends Controller
             'email' => 'required',
             'feedback' => 'required'
         ]);
-        $validate['customer_id'] = auth()->user()->id;
         ContactUs::create($validate);
         return redirect()->route('home');
     }

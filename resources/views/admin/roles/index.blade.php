@@ -5,7 +5,7 @@
 <nav class="hk-breadcrumb" aria-label="breadcrumb">
     <ol class="breadcrumb breadcrumb-light bg-transparent">
         <li class="breadcrumb-item"><a href="#">Books</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Contact us</li>
+        <li class="breadcrumb-item active" aria-current="page">Role</li>
     </ol>
 </nav>
 <!-- /Breadcrumb -->
@@ -13,7 +13,7 @@
 
     <!-- Title -->
     <div class="hk-pg-header">
-        <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Contact Us</h4>
+        <h4 class="hk-pg-title"><span class="pg-title-icon"><span class="feather-icon"><i data-feather="database"></i></span></span>Roles</h4>
     </div>
     <!-- /Title -->
 
@@ -28,16 +28,14 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Email</th>
-                                        <th>Feedback</th>
+                                        <th>Name</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($contactUs as $contact)
+                                    @foreach ($roles as $role)
                                         <tr class="bg-green">
-                                            <td>{{$contact->id}}</td>
-                                            <td>{{$contact->email}}</td>
-                                            <td>{{$contact->feedback}}</td>
+                                            <td>{{$role->id}}</td>
+                                            <td>{{$role->name}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

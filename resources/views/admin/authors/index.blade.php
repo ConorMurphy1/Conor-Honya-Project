@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="table-wrap">
-                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-blue" >
+                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-green" >
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -40,7 +40,7 @@
                                 </thead>
                                 <tbody >
                                     @foreach ($authors as $author)
-                                        <tr class="bg-blue">
+                                        <tr class="bg-green">
                                             <td>{{$author->id}}</td>
                                             <td>{{$author->name}}</td>
                                             <td>

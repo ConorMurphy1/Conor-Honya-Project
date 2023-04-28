@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="table-wrap">
-                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-blue">
+                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-green">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -37,7 +37,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($contracts as $contract)
-                                        <tr class="bg-blue">
+                                        <tr class="bg-green">
                                             <td>{{$contract->id}}</td>
                                             <td>{{$contract->author->name}}</td>
                                             <td>{{$contract->contractType->name}}</td>
@@ -52,15 +52,6 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Author</th>
-                                        <th>Contract Type</th>
-                                        <th>Note</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>

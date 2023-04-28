@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,7 @@ Route::resource('categories', CategoryController::class);
 Route::resource('contract-types', ContractTypeController::class);
 Route::resource('customer-types', CustomerTypeController::class);
 Route::resource('contracts', ContractController::class);
-Route::resource('employees', EmployeeController::class);
+Route::resource('users', UserController::class);
 Route::resource('authors', AuthorController::class);
 Route::resource('roles', RoleController::class);
 Route::resource('orders', OrderController::class);
@@ -56,4 +57,5 @@ Route::get('orders/detail/list', [OrderController::class, 'orderDetail'])->name(
 Route::resource('contact-us', ContactUsController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('books', BookController::class);
+Route::get('roles', [RoleController::class, 'index'])->name('roles.index');
 Route::get('/', [DashboardController::class, 'home'])->name('home');

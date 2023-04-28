@@ -10,9 +10,4 @@ class ContactUs extends Model
     use HasFactory;
 
     protected $guarded=[];
-
-    public function customer()
-    {
-        return $this->belongsTo('App\Models\Customer', 'customer_id')->withDefault();
-    }
 }

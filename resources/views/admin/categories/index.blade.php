@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="table-wrap">
-                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-blue" >
+                            <table id="datable_1" class="table table-hover w-100 display pb-30 bg-green" >
                                 <thead>
                                     <tr>
                                         <th>ID</th>
@@ -35,7 +35,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($categories as $category)
-                                        <tr class="bg-blue">
+                                        <tr class="bg-green">
                                             <td>{{$category->id}}</td>
                                             <td>{{$category->name}}</td>
                                             <td>
@@ -48,13 +48,6 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>
                     </div>

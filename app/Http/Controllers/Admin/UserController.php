@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Author;
+use App\Models\Book;
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,7 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+        $authors = Author::all();
+        $categories = Category::all();
+        $users = User::all();
+        return view('admin.users.index', compact('users','authors', 'books', 'categories'));
     }
 
     /**
@@ -21,7 +28,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $user = new User();
+        $books = Book::all();
+        $authors = Author::all();
+        $categories = Category::all();
+
+        return view('admin.users.create', compact('user','authors', 'books', 'categories'));
+
     }
 
     /**
