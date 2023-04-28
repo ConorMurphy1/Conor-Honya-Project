@@ -8,6 +8,7 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -20,7 +21,7 @@ class OrderController extends Controller
         $books = Book::all();
         $authors = Author::all();
         $categories = Category::all();
-
+        
         $orders = Order::all();
         return view('admin.carts.index', compact('books', 'authors', 'categories', 'orders'));
 
@@ -71,7 +72,7 @@ class OrderController extends Controller
 
 
         for($i=0; $i<count($cartBooks); $i++) {
-            
+
             $data = $request->validate([
                 'card_no' => 'required',
                 'payment_type' => 'required',
@@ -80,6 +81,8 @@ class OrderController extends Controller
         $data['status'] = 'paid';
         Order::findOrFail($cartBooks[$i]->id)->update($data);
         }
+
+        toast('Order Confirmed','success');
         return redirect()->route('home');
     }
 
@@ -96,6 +99,8 @@ class OrderController extends Controller
     public function orderDetail()
     {
         // dd('gege');
+
+        // Alert::
         $books = Book::all();
         $authors = Author::all();
         $categories = Category::all();

@@ -35,7 +35,7 @@
                                         <th>Password</th>
                                         <th>Address</th>
                                         <th>Role</th>
-                                        <th>Actions</th>
+                                        {{-- <th>Actions</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,13 +49,13 @@
                                             <td>{{$user->password}}</td>
                                             <td>{{$user->address}}</td>
                                             <td>{{$user->role->name}}</td>
-                                            <td>
+                                            {{-- <td>
                                                 <form action="{{ url('users/' . $user->id) }}" method="post">
                                                 @csrf @method('delete')
                                                     <a href="{{ url('users/'.$user->id.'/edit') }}" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit text-dark"></i></a>
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash-o text-dark"></i></button>
                                                 </form>
-                                            </td>
+                                            </td> --}}
                                         </tr>
                                     @endforeach
                                 </tbody>

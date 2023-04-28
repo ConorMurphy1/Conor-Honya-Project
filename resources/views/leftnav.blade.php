@@ -1,5 +1,5 @@
 @if ( auth()->user()->role_id == 2 || auth()->user()->role_id == 1 )
-    
+
 
 <nav class="hk-nav hk-nav-light">
     <a href="javascript:void(0);" id="hk_nav_close" class="hk-nav-close"><span class="feather-icon"><i data-feather="x"></i></span></a>
@@ -44,11 +44,11 @@
                     <ul id="customer_drp" class="nav flex-column collapse collapse-level-1">
                         <li class="nav-item">
                             <ul class="nav flex-column">
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" href="{{route('customer-types.index')}}">Customer Types</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('customers.index')}}">Customers</a>
+                                    <a class="nav-link" href="{{route('contact-us.index')}}">Feedback</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('orders.index')}}">Orders</a>

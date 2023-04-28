@@ -38,6 +38,7 @@ License: You must have a valid license purchased only from themeforest to legall
 <body>
 	<!-- HK Wrapper -->
 	<div class="hk-wrapper hk-vertical-nav">
+        @include('sweetalert::alert')
 
         {{-- @if () --}}
         <!-- Top Navbar -->
@@ -77,7 +78,7 @@ License: You must have a valid license purchased only from themeforest to legall
                         <form action="{{route('signout')}}" method="get">
                             @csrf
                         @if (auth()->user())
-                            <a class="dropdown-item" href="profile.html"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
+                            {{-- <a class="dropdown-item" href="profile.html"><i class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a> --}}
                             <button type="submit" class="dropdown-item"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log out</span></button>
                         @else
                             <a class="dropdown-item" href="{{route('login')}}"><i class="dropdown-icon zmdi zmdi-account"></i><span>Login</span></a>

@@ -62,7 +62,9 @@
                                 <select class="form-control custom-select d-block w-100" name="author_id" required>
                                     <option value="">Choose...</option>
                                     @foreach ($authors as $author)
-                                        <option value="{{$author->id}}">{{$author->name}} || {{$author->email}} </option>
+                                        <option @if ($book->author_id == $author->id)
+                                            selected
+                                        @endif value="{{$author->id}}">{{$author->name}} || {{$author->email}} </option>
                                     @endforeach
                                 </select>
                             </div>
@@ -70,7 +72,7 @@
                                 <label for="contract">Category</label>
                                 <select id="input_tags" class="form-control" multiple="multiple" name="category_ids[]">
                                     @foreach ($categories as $category)
-                                        <option value="{{$category->id}}">{{ $category->name }}</option>
+                                        <option  value="{{$category->id}}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -85,13 +87,13 @@
                             <div class="form-row">
                                 <div class="col-md-12 mb-10">
                                     <label >Year</label>
-                                    <input class="form-control" type="date" name="year" required>
+                                    <input class="form-control" type="date" value="{{$book->year}}" name="year" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12 mb-10">
                                     <label >Total Chapters</label>
-                                    <input class="form-control" type="text" name="total_chapters" required>
+                                    <input class="form-control" type="text" name="total_chapters" value="{{$book->total_chapters}}" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -101,7 +103,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">MMK</span>
                                         </div>
-                                        <input type="number" class="form-control"  name="price" required>
+                                        <input type="number" class="form-control"  name="price" value="{{$book->price}}" required>
                                         <div class="input-group-append">
                                             <span class="input-group-text">%</span>
                                         </div>
@@ -111,7 +113,7 @@
                             <div class="form-row">
                                 <div class="col-md-12 mb-10">
                                     <label>Quantity</label>
-                                    <input class="form-control" type="integer" name="quantity" >
+                                    <input class="form-control" type="integer" name="quantity" value="{{$book->quantity}}" >
                                 </div>
                             </div>
                             <div class="form-row">
@@ -130,9 +132,15 @@
                                     <label for="contract">Status</label>
                                     <select class="form-control custom-select d-block w-100" name="status" required>
                                         <option value="">Choose...</option>
-                                            <option value="ComingSoon">ComingSoon </option>
-                                            <option value="Instock">Instock </option>
-                                            <option value="OutOfStock">OutOfStock </option>
+                                            <option @if ($book->status == "ComingSoon")
+                                                selected
+                                            @endif value="ComingSoon">ComingSoon </option>
+                                            <option @if ($book->status == "Instock")
+                                                selected
+                                            @endif value="Instock">Instock </option>
+                                            <option @if ($book->status == "OutOfStock")
+                                                selected
+                                            @endif value="OutOfStock">OutOfStock </option>
                                     </select>
                                 </div>
                             </div>
